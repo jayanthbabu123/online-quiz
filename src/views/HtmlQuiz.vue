@@ -1,17 +1,17 @@
 <template>
   <div class="container mt-5">
     <div v-if="showInstructions" class="card text-center p-0">
-      <div class="card-header"><strong>Welcome to the HTML Quiz!</strong></div>
+      <div class="card-header"><strong>Welcome to the CSS Quiz!</strong></div>
       <div class="card-body">
-        <h5 class="card-title text-primary" >Quiz Instructions</h5>
+        <h5 class="card-title text-primary">Quiz Instructions</h5>
         <p class="card-text">
-          Get ready to test your knowledge with our interactive HTML quiz.
+          Get ready to test your knowledge with our interactive HTML and CSS quiz.
           Please read the instructions carefully before you begin.
         </p>
         <ul class="text-start">
           <li>
-            The quiz consists of {{ questions.length }} questions covering
-            various aspects of HTML.
+            The quiz consists of 10 questions covering
+            various aspects of HTML and CSS.
           </li>
           <li>
             You must select one option for each question to proceed to the next
@@ -35,7 +35,22 @@
   </div>
   <div class="container quiz-container mt-5">
     <div v-if="!submitted && !showInstructions">
-      <h2 class="mb-4">HTML Quiz</h2>
+      <div class="row">
+        <div class="col-4 mt-2 total-questions">
+          <strong
+            >Total Questions:
+            <span class="text-primary">{{ questions.length }}</span></strong
+          >
+        </div>
+        <div class="col-4 mt-2">
+          <div class="mb-4 text-center total-questions text-success">
+            <strong> HTML Quiz </strong>
+          </div>
+        </div>
+        <div class="col-4 text-end">
+          <p class="timer">Time Remaining: {{ minutes }}:{{ seconds }}</p>
+        </div>
+      </div>
       <div v-if="currentQuestion < questions.length" class="card p-3 mb-3">
         <p class="card-title">
           Q{{ currentQuestion + 1 }}.
@@ -43,7 +58,7 @@
             questions[currentQuestion].question
           }}</span>
         </p>
-        <p class="timer">Time Remaining: {{ minutes }}:{{ seconds }}</p>
+
         <div
           class="form-check"
           v-for="(option, optionIndex) in questions[currentQuestion].options"
@@ -63,28 +78,59 @@
             >{{ option }}</label
           >
         </div>
-        <button
-          @click="nextQuestion"
-          class="btn btn-primary mt-3"
-          :disabled="!userAnswers[currentQuestion]"
-          v-if="currentQuestion < questions.length - 1"
-        >
-          Next
-        </button>
-      </div>
-      <div v-if="currentQuestion === questions.length - 1">
-        <button @click="submitQuiz" class="btn btn-success">Submit Quiz</button>
+        <div class="row">
+          <div class="col-6">
+            <button
+              v-if="currentQuestion > 0"
+              class="btn btn-primary mt-3"
+              @click="previousQuestion"
+            >
+              Previous
+            </button>
+          </div>
+          <div class="col-6 text-end">
+            <button
+              @click="nextQuestion"
+              class="btn btn-primary mt-3 next-button"
+              :disabled="!userAnswers[currentQuestion]"
+              v-if="currentQuestion < questions.length - 1"
+            >
+              Next
+            </button>
+            <div v-if="currentQuestion === questions.length - 1">
+              <button @click="submitQuiz" class="btn btn-success">
+                Submit Quiz
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div v-else-if="submitted" class="mt-4">
-      <h2>Quiz Results</h2>
+      <h3 class="text-center text-primary">Quiz Results</h3>
+      <p class="text-center">
+        <strong>Correct Answers:</strong> {{ correctAnswers }}
+      </p>
+      <p class="text-center">
+        <strong>Incorrect Answers:</strong> {{ incorrectAnswers }}
+      </p>
       <div
         v-for="(question, index) in questions"
         :key="index"
         class="mb-3 card"
       >
         <p>
-          <strong>Q{{ index + 1 }}: {{ question.question }}</strong>
+          <strong class="pe-3">{{ index + 1 }}: {{ question.question }}</strong>
+          <font-awesome-icon
+            :icon="['fas', 'check']"
+            v-if="userAnswers[index] === question.correctAnswer"
+            class="text-success"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'times']"
+            v-else
+            class="text-danger"
+          />
         </p>
         <p>
           <span class="text-primary">Your answer:</span>
@@ -103,8 +149,7 @@
         <hr />
         <p class="text-secondary">{{ question.explanation }}</p>
       </div>
-      <p><strong>Correct Answers:</strong> {{ correctAnswers }}</p>
-      <p><strong>Incorrect Answers:</strong> {{ incorrectAnswers }}</p>
+
       <button @click="restartQuiz" class="btn btn-secondary">
         Restart Quiz
       </button>
@@ -113,25 +158,28 @@
 </template>
 
 <script>
-import questions from "@/data/html.json";
+
 export default {
   data() {
     return {
-      showInstructions: true,
-      questions: questions, // This will be populated with the JSON object of questions
-      userAnswers: Array(questions.length).fill(null),
-      correctAnswers: 0,
-      incorrectAnswers: 0,
-      submitted: false,
-      timeLeft: 1200, // 20 minutes in seconds
-      timer: null,
-      currentQuestion: 0,
+        allQuestions: [],  // All available questions, loaded from JSON
+        questions: [],     // To hold the randomly selected questions
+        userAnswers: [],
+        correctAnswers: 0,
+        incorrectAnswers: 0,
+        submitted: false,
+        timeLeft: 0,       // Timer to be set based on number of questions
+        timer: null,
+        currentQuestion: 0,
+        showInstructions: true  // Initially show instructions
     };
   },
   created() {
-    //this.questions = this.getQuestions(); // Assuming getQuestions() is a method that returns the JSON object of questions
-    this.startTimer();
-  },
+    import('@/data/html.json').then((module) => {
+        this.allQuestions = module.default;
+    });
+},
+
   computed: {
     minutes() {
       return Math.floor(this.timeLeft / 60);
@@ -141,134 +189,35 @@ export default {
     },
   },
   methods: {
-    getQuestions() {
-      // Return your JSON object of 20 questions here
-      // For demonstration, I'll return a dummy question
-      return [
-        {
-          question: "What is the purpose of the alt attribute in an <img> tag?",
-          options: [
-            "To provide a text description of the image if it cannot be displayed.",
-            "To alternate the image source if the original source fails.",
-            "To specify alternative styles for the image.",
-            "To provide an alternate URL for the image.",
-          ],
-          correctAnswer:
-            "To provide a text description of the image if it cannot be displayed.",
-          explanation:
-            "The alt attribute provides a text alternative for the image if it cannot be displayed, which is useful for accessibility.",
-        },
-        {
-          question: "What does the for attribute in a <label> element specify?",
-          options: [
-            "The form data that should be sent when submitting the form.",
-            "The ID of the form element the label is bound to.",
-            "The name of the form the label belongs to.",
-            "The encoding type of the form data.",
-          ],
-          correctAnswer: "The ID of the form element the label is bound to.",
-          explanation:
-            "The for attribute associates the label with an input element by matching the input's ID.",
-        },
-        {
-          question:
-            "How do you ensure that a group of radio buttons allows only one selection at a time?",
-          options: [
-            "Give each input a unique name attribute.",
-            "Give each input the same value attribute.",
-            "Give each input the same type attribute.",
-            "Give each input the same name attribute.",
-          ],
-          correctAnswer: "Give each input the same name attribute.",
-          explanation:
-            "Giving each radio button in a group the same name attribute ensures that only one can be selected at any time.",
-        },
-        {
-          question: "In CSS, which selector has the highest specificity?",
-          options: [
-            "Element selector (e.g., h1)",
-            "Class selector (e.g., .menu)",
-            "ID selector (e.g., #header)",
-            "Inline style",
-          ],
-          correctAnswer: "Inline style",
-          explanation:
-            "Inline styles have the highest specificity compared to selectors in external or internal stylesheets.",
-        },
-        {
-          question:
-            "What is the default behavior of a form when the submit button is clicked?",
-          options: [
-            "The form data is saved locally.",
-            "The form is cleared of all data.",
-            "The form data is sent to the server.",
-            "The form checks for empty required fields.",
-          ],
-          correctAnswer: "The form data is sent to the server.",
-          explanation:
-            "By default, when a submit button in a form is clicked, the form data is sent to the server specified in the form’s action attribute.",
-        },
-        {
-          question:
-            "Which HTML attribute is used to define the maximum number of characters allowed in an <input> field?",
-          options: ["max", "maxlength", "length", "size"],
-          correctAnswer: "maxlength",
-          explanation:
-            "The maxlength attribute specifies the maximum number of characters allowed in an input field.",
-        },
-        {
-          question: "Which HTML tag is used to create a drop-down list?",
-          options: [
-            '<input type="dropdown">',
-            "<list>",
-            "<select>",
-            "<option>",
-          ],
-          correctAnswer: "<select>",
-          explanation: "The <select> tag is used to create a drop-down list.",
-        },
-        {
-          question: "How can you make a text input field read-only?",
-          options: [
-            '<input type="text" readonly>',
-            '<input type="text" disabled>',
-            '<input type="text" locked="true">',
-            '<input type="text" editable="false">',
-          ],
-          correctAnswer: '<input type="text" readonly>',
-          explanation:
-            "The readonly attribute makes the <input> field unmodifiable, although the user can still focus and copy text from it.",
-        },
-        {
-          question:
-            'What does the target="_blank" attribute in an anchor tag do?',
-          options: [
-            "Opens the linked document in a new window or tab.",
-            "Downloads the linked document.",
-            "Opens the linked document in the same frame.",
-            "Specifies that the linked document should be shown in full-screen.",
-          ],
-          correctAnswer: "Opens the linked document in a new window or tab.",
-          explanation:
-            'The target="_blank" attribute in an anchor tag specifies that the link should open in a new window or tab.',
-        },
-      ];
-    },
     startQuiz() {
-      this.showInstructions = false;
+        this.selectRandomQuestions();
+        this.startTimer();
+        this.showInstructions = false;  // Hide instructions and start the quiz
+    },
+    selectRandomQuestions() {
+        const shuffled = this.allQuestions.sort(() => 0.5 - Math.random());
+        this.questions = shuffled.slice(0, 10); // Select 10 random questions
+        this.userAnswers = Array(this.questions.length).fill(null);
     },
     startTimer() {
-      this.timer = setInterval(() => {
-        if (this.timeLeft > 0) {
-          this.timeLeft--;
-        } else {
-          this.submitQuiz();
-        }
-      }, 1000);
+        this.timeLeft = this.questions.length * 60; // 60 seconds per question
+        clearInterval(this.timer);
+        this.timer = setInterval(() => {
+            if (this.timeLeft > 0) {
+                this.timeLeft--;
+            } else {
+                this.submitQuiz();
+            }
+        }, 1000);
     },
     nextQuestion() {
       if (this.currentQuestion < this.questions.length - 1) {
         this.currentQuestion++;
+      }
+    },
+    previousQuestion() {
+      if (this.currentQuestion > 0) {
+        this.currentQuestion--;
       }
     },
     submitQuiz() {
@@ -304,7 +253,6 @@ export default {
   border: 1px solid #dee2e6;
   padding: 20px;
   border-radius: 5px;
-  background-color: #f8f9fa;
   text-align: left;
 }
 
@@ -322,8 +270,8 @@ h2 {
 }
 
 .form-check-label {
-  margin-left: 5px;
-  margin-top: 7px;
+  margin-left: 10px;
+  margin-top: 9px;
 }
 
 .form-check-input {
@@ -337,14 +285,11 @@ button {
 }
 
 .timer {
-  position: absolute;
-  right: 15px;
-  top: 15px;
   color: red;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 5px 10px;
   border-radius: 5px;
+  font-size: 17px;
 }
 
 @media (max-width: 767px) {
@@ -357,5 +302,28 @@ button {
 .card-title {
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 16px;
+}
+.next-button {
+  width: 100px;
+}
+.form-check {
+  background: #f7f7f7;
+  display: block;
+  min-height: 1.5rem;
+  padding: 7px;
+  padding-left: 30px;
+  padding-bottom: 14px;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+}
+
+.total-questions {
+  font-size: 17px;
+}
+.form-check-input {
+  height: 1.3em;
+  width: 1.3em;
+  cursor: pointer;
 }
 </style>

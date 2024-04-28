@@ -136,17 +136,6 @@
     "explanation": "The <br> tag is used in HTML to insert a line break between lines of text."
   },
   {
-    "question": "In CSS, what does 'z-index' property do?",
-    "options": [
-      "Controls the horizontal alignment",
-      "Controls the depth positioning of an element",
-      "Sets the zoom level of an element",
-      "Adjusts the z-axis rotation"
-    ],
-    "correctAnswer": "Controls the depth positioning of an element",
-    "explanation": "The 'z-index' property in CSS controls the stack order of an element, which is its depth positioning on the webpage."
-  },
-  {
     "question": "Which attribute in HTML5 specifies that an input field must be filled out before submitting the form?",
     "options": ["placeholder", "required", "validate", "necessary"],
     "correctAnswer": "required",
@@ -157,5 +146,509 @@
     "options": ["<heading>", "<h1>", "<h6>", "<head>"],
     "correctAnswer": "<h1>",
     "explanation": "The <h1> element is used for the largest level of heading in HTML."
+  },
+  {
+    "question": "What HTML tag is used to define an internal style sheet?",
+    "options": ["<style>", "<css>", "<script>", "<link>"],
+    "correctAnswer": "<style>",
+    "explanation": "The <style> tag is used to define style information (CSS) for a document. Inside this tag, you specify how HTML elements should render in the browser."
+  },
+  {
+    "question": "Which CSS property controls the text size?",
+    "options": ["text-style", "font-style", "text-size", "font-size"],
+    "correctAnswer": "font-size",
+    "explanation": "The 'font-size' property is used in CSS to specify the size of the text. Values can be specified in units such as px, em, rem, etc."
+  },
+  {
+    "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+    "options": ["alt", "title", "src", "longdesc"],
+    "correctAnswer": "alt",
+    "explanation": "The 'alt' attribute provides alternative information for an image if a user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader)."
+  },
+  {
+    "question": "How do you make each word in a text start with a capital letter?",
+    "options": [
+      "text-transform: capitalize",
+      "text-transform: uppercase",
+      "text-transform: lowercase",
+      "font-capitalize: true"
+    ],
+    "correctAnswer": "text-transform: capitalize",
+    "explanation": "The CSS 'text-transform' property is used to specify uppercase and lowercase letters in a text. The 'capitalize' value transforms the first character of each word to uppercase."
+  },
+  {
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Trainer Markup Language",
+      "Hyper Text Markup Language",
+      "Hyperlinks Text Mark Language",
+      "Hyperlinking Text Marking Language"
+    ],
+    "correctAnswer": "Hyper Text Markup Language",
+    "explanation": "HTML stands for Hyper Text Markup Language. It is the standard markup language for creating Web pages and describes the structure of a Web page."
+  },
+  {
+    "question": "Which doctype is correct for HTML5?",
+    "options": [
+      "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 5.0//EN'>",
+      "<!DOCTYPE HTML5>",
+      "<!DOCTYPE html>",
+      "<!DOCTYPE>"
+    ],
+    "correctAnswer": "<!DOCTYPE html>",
+    "explanation": "The <!DOCTYPE html> declaration defines this document to be HTML5, and is placed at the very beginning of an HTML document."
+  },
+  {
+    "question": "What does the 'DOCTYPE' declaration specify?",
+    "options": [
+      "The version of HTML to use",
+      "The link between a document and an external resource",
+      "The programming language the document is written in",
+      "The character encoding of the document"
+    ],
+    "correctAnswer": "The version of HTML to use",
+    "explanation": "The DOCTYPE declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in."
+  },
+  {
+    "question": "Which HTML element is used to specify a header for a document or section?",
+    "options": ["<header>", "<top>", "<head>", "<section>"],
+    "correctAnswer": "<header>",
+    "explanation": "The <header> element represents a container for introductory content or a set of navigational links."
+  },
+  {
+    "question": "Which property is used to change the font of an element in CSS?",
+    "options": ["font-style", "text-style", "font-family", "typeface"],
+    "correctAnswer": "font-family",
+    "explanation": "The font-family property specifies the font of an element."
+  },
+  {
+    "question": "What is the purpose of the alt attribute for images in HTML?",
+    "options": [
+      "To provide a description of the image",
+      "To make the image load faster",
+      "To present alternative content if the image cannot be displayed",
+      "Both A and C are correct"
+    ],
+    "correctAnswer": "Both A and C are correct",
+    "explanation": "The alt attribute provides alternative information for an image if a user cannot view it for any reason."
+  },
+  {
+    "question": "Which HTML tag is used to display a picture?",
+    "options": ["<picture>", "<image>", "<img>", "<src>"],
+    "correctAnswer": "<img>",
+    "explanation": "The <img> tag is used to embed images in an HTML page."
+  },
+  {
+    "question": "What property is used to specify the space between elements in CSS?",
+    "options": ["margin", "spacing", "padding", "border"],
+    "correctAnswer": "margin",
+    "explanation": "The margin property controls the space between the borders of adjacent elements."
+  },
+  {
+    "question": "Which tag is used to define an interactive field where users can enter data?",
+    "options": ["<textfield>", "<input>", "<dataput>", "<enterpoint>"],
+    "correctAnswer": "<input>",
+    "explanation": "The <input> tag specifies an input field where users can enter data."
+  },
+  {
+    "question": "In CSS, how do you select an element with the id 'demo'?",
+    "options": ["*demo", "#demo", ".demo", "demo"],
+    "correctAnswer": "#demo",
+    "explanation": "In CSS, to select an element with a specific id, you use the # symbol followed by the id of the element."
+  },
+  {
+    "question": "What is the default display value for most elements?",
+    "options": ["inline", "block", "flex", "grid"],
+    "correctAnswer": "block",
+    "explanation": "Most HTML elements are block-level elements by default, which means they start on a new line and take up the full width available."
+  },
+  {
+    "question": "How do you make a list that lists its items with squares?",
+    "options": [
+      "list-style-type: square;",
+      "list-type: square;",
+      "list-style: square;",
+      "list: square;"
+    ],
+    "correctAnswer": "list-style-type: square;",
+    "explanation": "The list-style-type property applies styles to list items, and 'square' is a valid value that styles the list item markers with squares."
+  },
+  {
+    "question": "Which element is used to define important text in HTML?",
+    "options": ["<important>", "<strong>", "<b>", "<em>"],
+    "correctAnswer": "<strong>",
+    "explanation": "The <strong> element is used to define text with strong importance, and the content inside is typically displayed in bold."
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Computing Style Sheet",
+      "Creative Style System",
+      "Cascading Style Sheets",
+      "Colorful Style Sheets"
+    ],
+    "correctAnswer": "Cascading Style Sheets",
+    "explanation": "CSS stands for Cascading Style Sheets; it describes how HTML elements are to be displayed on screen, paper, or in other media."
+  },
+  {
+    "question": "Which attribute specifies a link's destination?",
+    "options": ["href", "src", "link", "dest"],
+    "correctAnswer": "href",
+    "explanation": "The href attribute specifies the URL of the page the link goes to."
+  },
+  {
+    "question": "Which CSS property controls the text size?",
+    "options": ["font-size", "text-size", "font-weight", "text-style"],
+    "correctAnswer": "font-size",
+    "explanation": "The font-size property is used in CSS to change the size of the text displayed."
+  },
+  {
+    "question": "What HTML tag is used to define a table heading?",
+    "options": ["<thead>", "<th>", "<header>", "<top>"],
+    "correctAnswer": "<th>",
+    "explanation": "The <th> tag is used to define a header cell in an HTML table."
+  },
+  {
+    "question": "What HTML attribute prevents a link from being followed or indexed?",
+    "options": ["nofollow", "rel=\"nofollow\"", "noindex", "nofollow=\"true\""],
+    "correctAnswer": "rel=\"nofollow\"",
+    "explanation": "The rel=\"nofollow\" attribute in an anchor tag instructs search engines not to follow the link or pass on any authority through that link."
+  },
+  {
+    "question": "Which HTML5 input type defines a slider control?",
+    "options": [
+      "<input type=\"slider\">",
+      "<input type=\"scroll\">",
+      "<input type=\"range\">",
+      "<input type=\"adjust\">"
+    ],
+    "correctAnswer": "<input type=\"range\">",
+    "explanation": "<input type=\"range\"> defines a control for entering a number whose exact value is not important."
+  },
+  {
+    "question": "What CSS property is used to make the background color of an element semi-transparent?",
+    "options": [
+      "background-color: transparent;",
+      "background-opacity: 0.5;",
+      "opacity: 0.5;",
+      "background-color: rgba(0, 0, 0, 0.5);"
+    ],
+    "correctAnswer": "background-color: rgba(0, 0, 0, 0.5);",
+    "explanation": "Using rgba for the background color allows you to specify an alpha value, which defines the opacity."
+  },
+  {
+    "question": "How do you apply a CSS style for all buttons of class 'btn' when they are hovered over?",
+    "options": [
+      "button.btn:hover { }",
+      "button .btn:hover { }",
+      ".btn button:hover { }",
+      ".btn:button:hover { }"
+    ],
+    "correctAnswer": "button.btn:hover { }",
+    "explanation": "button.btn:hover { } correctly selects buttons with class 'btn' and applies styles when they are hovered over."
+  },
+  {
+    "question": "Which HTML tag is specifically used for embedding a video file?",
+    "options": ["<video>", "<media>", "<embed>", "<movie>"],
+    "correctAnswer": "<video>",
+    "explanation": "The <video> tag is used to embed video content in a document."
+  },
+  {
+    "question": "Which attribute in <video> is used to automatically start playing as soon as it can do so without stopping to finish loading?",
+    "options": ["autoplay", "auto", "play", "load"],
+    "correctAnswer": "autoplay",
+    "explanation": "The autoplay attribute is a boolean attribute; when specified, the video will automatically begin to play back as soon as it can do so without stopping."
+  },
+  {
+    "question": "What is the purpose of HTML5's <aside> element?",
+    "options": [
+      "To mark additional information that can enhance another element but is not required.",
+      "To define navigational links.",
+      "To contain the main content of the webpage.",
+      "To define something that should be emphasized."
+    ],
+    "correctAnswer": "To mark additional information that can enhance another element but is not required.",
+    "explanation": "The <aside> element is used for content that is tangentially related to the content around it."
+  },
+  {
+    "question": "What CSS property is used to specify the stacking order of an element?",
+    "options": ["order", "layer", "sequence", "z-index"],
+    "correctAnswer": "z-index",
+    "explanation": "z-index is used to specify the stack order of an element (which element should be placed in front of, or behind, the others)."
+  },
+  {
+    "question": "Which attribute is necessary to specify the image path in an <img> tag?",
+    "options": ["src", "href", "path", "source"],
+    "correctAnswer": "src",
+    "explanation": "The src (source) attribute is required for the <img> tag to function, as it specifies the path to the image to be displayed."
+  },
+  {
+    "question": "What does the <datalist> element in HTML5 do?",
+    "options": [
+      "Creates a new data storage for client-side content.",
+      "Specifies a list of pre-defined options for input controls.",
+      "Lists data in a table-like format.",
+      "Connects to a database to fetch data based on user input."
+    ],
+    "correctAnswer": "Specifies a list of pre-defined options for input controls.",
+    "explanation": "The <datalist> element contains a set of <option> elements that represent the permissible or suggested options available to users in other controls."
+  },
+  {
+    "question": "In CSS, what is the difference between visibility: hidden; and display: none;?",
+    "options": [
+      "visibility: hidden; removes the element from the DOM, while display: none; does not.",
+      "visibility: hidden; hides the element but it still takes up space, while display: none; removes it from the document flow.",
+      "display: none; changes the opacity to zero, visibility: hidden; does not.",
+      "There is no difference."
+    ],
+    "correctAnswer": "visibility: hidden; hides the element but it still takes up space, while display: none; removes it from the document flow.",
+    "explanation": "visibility: hidden; keeps the element in the document layout but makes it invisible, while display: none; removes the element completely from the document layout."
+  },
+
+  {
+    "question": "What is the use of the 'display' property in CSS?",
+    "options": [
+      "It specifies how long an animation should take.",
+      "It changes the type of cursor.",
+      "It controls the layout of an element.",
+      "It sets the visibility of an element."
+    ],
+    "correctAnswer": "It controls the layout of an element.",
+    "explanation": "The 'display' property is used in CSS to control the display type of an element, influencing both the layout and the type of box it generates."
+  },
+  {
+    "question": "How do you select all <p> elements inside <div> elements in CSS?",
+    "options": ["div + p {}", "div p {}", "div .p {}", "div > p {}"],
+    "correctAnswer": "div p {}",
+    "explanation": "The selector 'div p {}' selects all <p> elements that are descendants of <div> elements, not just direct children."
+  },
+  {
+    "question": "What is the purpose of the 'alt' attribute for images in HTML?",
+    "options": [
+      "To provide a description of the image",
+      "To make the image load faster",
+      "To present alternative content if the image cannot be displayed",
+      "Both A and C are correct"
+    ],
+    "correctAnswer": "Both A and C are correct",
+    "explanation": "The 'alt' attribute provides alternative information for an image if a user cannot view it for any reason."
+  },
+  {
+    "question": "How can CSS be embedded into an HTML document?",
+    "options": [
+      "Using the <link> element in the document head.",
+      "Using the <style> element in the document head.",
+      "Inline, by using the 'style' attribute on elements.",
+      "All of the above."
+    ],
+    "correctAnswer": "All of the above.",
+    "explanation": "CSS can be added to HTML by linking to an external stylesheet, embedding with the <style> element, or using inline styles."
+  },
+  {
+    "question": "What is the difference between classes and IDs in CSS?",
+    "options": [
+      "IDs are unique per page and classes are not.",
+      "Classes are unique per page and IDs are not.",
+      "IDs are used for JavaScript and classes for CSS.",
+      "There is no difference between them."
+    ],
+    "correctAnswer": "IDs are unique per page and classes are not.",
+    "explanation": "In CSS, an ID uniquely identifies one element on a page, while a class can be used to style multiple elements."
+  },
+  {
+    "question": "Which HTML5 element is best suited for a container of navigation links?",
+    "options": ["<nav>", "<menu>", "<navigation>", "<directory>"],
+    "correctAnswer": "<nav>",
+    "explanation": "The <nav> element is specifically meant to contain navigation links, according to HTML5 semantics."
+  },
+  {
+    "question": "What does 'flex' do in the display property of a container?",
+    "options": [
+      "Allows you to manage space distribution and alignment of children elements flexibly.",
+      "Fixes the container's dimensions.",
+      "Provides high flexibility to JavaScript functions.",
+      "None of the above."
+    ],
+    "correctAnswer": "Allows you to manage space distribution and alignment of children elements flexibly.",
+    "explanation": "The 'display: flex' property enables a flexible container layout that can dynamically adjust its children elements."
+  },
+  {
+    "question": "How do you apply a CSS rule to only an element with both a specific class and id?",
+    "options": [
+      "#id.class {}",
+      ".class#id {}",
+      "#id, .class {}",
+      "#id .class {}"
+    ],
+    "correctAnswer": "#id.class {}",
+    "explanation": "To select an element with both an id and a class, the selector should combine them without spaces, like '#id.class'."
+  },
+  {
+    "question": "What HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+    "options": ["alt", "title", "src", "longdesc"],
+    "correctAnswer": "alt",
+    "explanation": "The 'alt' attribute provides alternative information for an image if a user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader)."
+  },
+  {
+    "question": "In CSS, how do you select elements where the type is 'button'?",
+    "options": [
+      "button[type='submit']",
+      "[type='button']",
+      "input[type='button']",
+      "All of the above"
+    ],
+    "correctAnswer": "All of the above",
+    "explanation": "All of these selectors will correctly select elements where the type attribute is set to 'button'."
+  },
+  {
+    "question": "What is a semantic element in HTML?",
+    "options": [
+      "An element that has no meaning",
+      "An element that clearly describes its meaning to both the browser and the developer",
+      "An element that enhances the aesthetics of the webpage",
+      "An element used only for layout purposes"
+    ],
+    "correctAnswer": "An element that clearly describes its meaning to both the browser and the developer",
+    "explanation": "Semantic elements clearly define their content which helps the browser and developers understand the meaning of the content."
+  },
+  {
+    "question": "What does the 'box-sizing' property do in CSS?",
+    "options": [
+      "Controls the animation timing of a box.",
+      "Alters the fundamental box model layout.",
+      "Defines how the width and height of a box are calculated.",
+      "Applies shadows to a box."
+    ],
+    "correctAnswer": "Defines how the width and height of a box are calculated.",
+    "explanation": "'box-sizing' property in CSS can change how the width and height of an element are calculated, whether they include padding and borders or not."
+  },
+  {
+    "question": "Which HTML attribute is used to set the width of an <img> element?",
+    "options": ["length", "width", "size", "scale"],
+    "correctAnswer": "width",
+    "explanation": "The 'width' attribute specifically sets the width of an image element in HTML."
+  },
+  {
+    "question": "What is the purpose of the <meta> tag in HTML?",
+    "options": [
+      "To store metadata such as the page description, keywords, author of the document.",
+      "To automatically refresh the page.",
+      "To link external CSS files.",
+      "Both A and B are correct."
+    ],
+    "correctAnswer": "Both A and B are correct.",
+    "explanation": "The <meta> tag is used to specify metadata like page description, keywords, author, and also for setting up character set and viewport settings, as well as for auto-refreshing the page."
+  },
+  {
+    "question": "What is the function of the CSS 'overflow' property?",
+    "options": [
+      "It specifies what should happen if content overflows an element's box.",
+      "It creates additional space around an element's content.",
+      "It adds scroll bars to an element automatically.",
+      "It hides any content that overflows."
+    ],
+    "correctAnswer": "It specifies what should happen if content overflows an element's box.",
+    "explanation": "The 'overflow' property specifies whether to clip content, add scrollbars or display overflow content of a block-level element."
+  },
+  {
+    "question": "How can you make a list that displays its items with roman numerals?",
+    "options": [
+      "list-style-type: roman;",
+      "list-type: numeral;",
+      "list-style: roman-numeral;",
+      "list-style-type: upper-roman;"
+    ],
+    "correctAnswer": "list-style-type: upper-roman;",
+    "explanation": "The 'list-style-type: upper-roman;' property in CSS changes the list item markers to upper-case Roman numerals."
+  },
+  {
+    "question": "Which HTML tag is used to define a section of a document intended for navigation?",
+    "options": ["<navigate>", "<nav>", "<navigation>", "<menu>"],
+    "correctAnswer": "<nav>",
+    "explanation": "The <nav> element is meant to house the navigation links in your document."
+  },
+  {
+    "question": "In CSS, what property is used to create space between the border and the content of an element?",
+    "options": ["margin", "padding", "border", "spacing"],
+    "correctAnswer": "padding",
+    "explanation": "Padding is used to create space between the border and the content of an element."
+  },
+  {
+    "question": "What does the 'href' attribute in the <link> tag specify?",
+    "options": [
+      "The relationship between the current document and the linked document.",
+      "The location of the linked document or resource.",
+      "The type of media the linked document is designed for.",
+      "The size of the linked resource."
+    ],
+    "correctAnswer": "The location of the linked document or resource.",
+    "explanation": "In the <link> tag, the 'href' attribute specifies the URL of the linked document or resource."
+  },
+  {
+    "question": "Which CSS property changes the text color of an element?",
+    "options": ["text-color", "font-color", "color", "background-color"],
+    "correctAnswer": "color",
+    "explanation": "The 'color' property in CSS is used to set the color of the text inside an element."
+  },
+  {
+    "question": "What is the purpose of the HTML <title> tag?",
+    "options": [
+      "To create a large, bold title inside the body.",
+      "To define the title of the document, shown in the browser's title bar or tab.",
+      "To add a heading in the HTML document.",
+      "To specify the scripting language used in the document."
+    ],
+    "correctAnswer": "To define the title of the document, shown in the browser's title bar or tab.",
+    "explanation": "The <title> tag defines the title of the document, which is displayed in the browser's title bar or tab."
+  },
+  {
+    "question": "How do you apply a style for all <h1> tags inside <div>s with class 'header'?",
+    "options": [
+      "div.header h1 {}",
+      "div .header h1 {}",
+      ".header > h1 {}",
+      "h1.header div {}"
+    ],
+    "correctAnswer": "div.header h1 {}",
+    "explanation": "The selector 'div.header h1 {}' correctly applies styles to all <h1> elements within <div> elements with class 'header'."
+  },
+  {
+    "question": "What does the 'srcset' attribute in an <img> tag do?",
+    "options": [
+      "Specifies a set of images for different display/device conditions.",
+      "Defines the source file for the image.",
+      "Sets multiple sources for backup if the original fails.",
+      "Controls the resizing of the image."
+    ],
+    "correctAnswer": "Specifies a set of images for different display/device conditions.",
+    "explanation": "The 'srcset' attribute allows you to specify a list of image files to display in different situations (e.g., varying resolutions or device conditions)."
+  },
+  {
+    "question": "What is the difference between the CSS properties 'visibility: hidden' and 'display: none'?",
+    "options": [
+      "visibility: hidden retains the element's space, display: none does not.",
+      "display: none retains the element's space, visibility: hidden does not.",
+      "visibility: hidden deletes the element from the document, display: none does not.",
+      "There is no practical difference between the two."
+    ],
+    "correctAnswer": "visibility: hidden retains the element's space, display: none does not.",
+    "explanation": "'visibility: hidden' makes the element invisible while still occupying space in the layout, whereas 'display: none' removes the element from the flow, not occupying any space."
+  },
+  {
+    "question": "Which HTML element is used to specify independent, self-contained content?",
+    "options": ["<article>", "<section>", "<div>", "<blockquote>"],
+    "correctAnswer": "<article>",
+    "explanation": "An <article> element is meant to be used for independent, self-contained content."
+  },
+  {
+    "question": "In CSS, how can you make every <p> element's first letter increase in size?",
+    "options": [
+      "p::first-letter { font-size: 200%; }",
+      "p:first-letter { font-size: 200%; }",
+      "p > first-letter { font-size: 200%; }",
+      "p.::first-letter { font-size: 200%; }"
+    ],
+    "correctAnswer": "p::first-letter { font-size: 200%; }",
+    "explanation": "The ::first-letter pseudo-element is used to apply a style to the first letter of the first line of a block-level element, in this case making it larger."
   }
 ]
