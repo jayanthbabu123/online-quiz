@@ -26,7 +26,7 @@
                 >HTML Quiz</router-link
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <router-link class="nav-link" to="/css-quiz"
                 >CSS Quiz</router-link
               >
@@ -35,7 +35,7 @@
               <router-link class="nav-link" to="/javascript-quiz"
                 >JavaScript Quiz</router-link
               >
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
