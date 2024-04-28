@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5">
     <div v-if="showInstructions" class="card text-center p-0">
-      <div class="card-header"><strong>Welcome to the CSS Quiz!</strong></div>
+      <div class="card-header"><strong>Welcome to the HTML and CSS Quiz!</strong></div>
       <div class="card-body">
         <h5 class="card-title text-primary">Quiz Instructions</h5>
         <p class="card-text">
