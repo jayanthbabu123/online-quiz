@@ -1,0 +1,161 @@
+[
+  {
+    "question": "What is the purpose of the alt attribute in an <img> tag?",
+    "options": [
+      "To provide a text description of the image if it cannot be displayed.",
+      "To alternate the image source if the original source fails.",
+      "To specify alternative styles for the image.",
+      "To provide an alternate URL for the image."
+    ],
+    "correctAnswer": "To provide a text description of the image if it cannot be displayed.",
+    "explanation": "The alt attribute provides a text alternative for the image if it cannot be displayed, which is useful for accessibility."
+  },
+  {
+    "question": "What does the for attribute in a <label> element specify?",
+    "options": [
+      "The form data that should be sent when submitting the form.",
+      "The ID of the form element the label is bound to.",
+      "The name of the form the label belongs to.",
+      "The encoding type of the form data."
+    ],
+    "correctAnswer": "The ID of the form element the label is bound to.",
+    "explanation": "The for attribute associates the label with an input element by matching the input's ID."
+  },
+  {
+    "question": "How do you ensure that a group of radio buttons allows only one selection at a time?",
+    "options": [
+      "Give each input a unique name attribute.",
+      "Give each input the same value attribute.",
+      "Give each input the same type attribute.",
+      "Give each input the same name attribute."
+    ],
+    "correctAnswer": "Give each input the same name attribute.",
+    "explanation": "Giving each radio button in a group the same name attribute ensures that only one can be selected at any time."
+  },
+  {
+    "question": "In CSS, which selector has the highest specificity?",
+    "options": [
+      "Element selector (e.g., h1)",
+      "Class selector (e.g., .menu)",
+      "ID selector (e.g., #header)",
+      "Inline style"
+    ],
+    "correctAnswer": "Inline style",
+    "explanation": "Inline styles have the highest specificity compared to selectors in external or internal stylesheets."
+  },
+  {
+    "question": "What is the default behavior of a form when the submit button is clicked?",
+    "options": [
+      "The form data is saved locally.",
+      "The form is cleared of all data.",
+      "The form data is sent to the server.",
+      "The form checks for empty required fields."
+    ],
+    "correctAnswer": "The form data is sent to the server.",
+    "explanation": "By default, when a submit button in a form is clicked, the form data is sent to the server specified in the form’s action attribute."
+  },
+  {
+    "question": "Which HTML attribute is used to define the maximum number of characters allowed in an <input> field?",
+    "options": ["max", "maxlength", "length", "size"],
+    "correctAnswer": "maxlength",
+    "explanation": "The maxlength attribute specifies the maximum number of characters allowed in an input field."
+  },
+  {
+    "question": "Which HTML tag is used to create a drop-down list?",
+    "options": ["<input type=\"dropdown\">", "<list>", "<select>", "<option>"],
+    "correctAnswer": "<select>",
+    "explanation": "The <select> tag is used to create a drop-down list."
+  },
+  {
+    "question": "How can you make a text input field read-only?",
+    "options": [
+      "<input type=\"text\" readonly>",
+      "<input type=\"text\" disabled>",
+      "<input type=\"text\" locked=\"true\">",
+      "<input type=\"text\" editable=\"false\">"
+    ],
+    "correctAnswer": "<input type=\"text\" readonly>",
+    "explanation": "The readonly attribute makes the <input> field unmodifiable, although the user can still focus and copy text from it."
+  },
+  {
+    "question": "What does the target=\"_blank\" attribute in an anchor tag do?",
+    "options": [
+      "Opens the linked document in a new window or tab.",
+      "Downloads the linked document.",
+      "Opens the linked document in the same frame.",
+      "Specifies that the linked document should be shown in full-screen."
+    ],
+    "correctAnswer": "Opens the linked document in a new window or tab.",
+    "explanation": "The target=\"_blank\" attribute in an anchor tag specifies that the link should open in a new window or tab."
+  },
+  {
+    "question": "What attribute is used with <img> to handle image maps?",
+    "options": ["srcmap", "usemap", "map", "linkmap"],
+    "correctAnswer": "usemap",
+    "explanation": "The 'usemap' attribute in the <img> tag associates the image with an image map defined by a <map> element."
+  },
+  {
+    "question": "Which HTML5 element is used to specify a footer for a document or section?",
+    "options": ["<footer>", "<bottom>", "<section>", "<div>"],
+    "correctAnswer": "<footer>",
+    "explanation": "The <footer> element is used to define a footer for a document or a section."
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Colorful Style Sheets",
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Computer Style Sheets"
+    ],
+    "correctAnswer": "Cascading Style Sheets",
+    "explanation": "CSS stands for Cascading Style Sheets, a language used to describe the presentation of a document written in HTML."
+  },
+  {
+    "question": "In CSS, what property is used to change the text color of an element?",
+    "options": ["font-color", "text-color", "color", "background-color"],
+    "correctAnswer": "color",
+    "explanation": "The 'color' property is used in CSS to define the color of the text inside an element."
+  },
+  {
+    "question": "Which HTML tag is used to define emphasized text?",
+    "options": ["<strong>", "<em>", "<highlight>", "<italic>"],
+    "correctAnswer": "<em>",
+    "explanation": "The <em> tag is used to indicate emphasis that subtly changes the meaning of a sentence."
+  },
+  {
+    "question": "What property is used to set the spacing between lines of text in CSS?",
+    "options": ["spacing", "line-height", "line-spacing", "letter-spacing"],
+    "correctAnswer": "line-height",
+    "explanation": "The 'line-height' property is used in CSS to set the amount of space used for lines, such as in text."
+  },
+  {
+    "question": "Which element is used in HTML to create a line break?",
+    "options": ["<break>", "<lb>", "<br>", "<line>"],
+    "correctAnswer": "<br>",
+    "explanation": "The <br> tag is used in HTML to insert a line break between lines of text."
+  },
+  {
+    "question": "In CSS, what does 'z-index' property do?",
+    "options": [
+      "Controls the horizontal alignment",
+      "Controls the depth positioning of an element",
+      "Sets the zoom level of an element",
+      "Adjusts the z-axis rotation"
+    ],
+    "correctAnswer": "Controls the depth positioning of an element",
+    "explanation": "The 'z-index' property in CSS controls the stack order of an element, which is its depth positioning on the webpage."
+  },
+  {
+    "question": "Which attribute in HTML5 specifies that an input field must be filled out before submitting the form?",
+    "options": ["placeholder", "required", "validate", "necessary"],
+    "correctAnswer": "required",
+    "explanation": "The 'required' attribute of an input tag specifies that the field must be filled out before the form can be submitted."
+  },
+  {
+    "question": "What HTML element is used for the largest heading?",
+    "options": ["<heading>", "<h1>", "<h6>", "<head>"],
+    "correctAnswer": "<h1>",
+    "explanation": "The <h1> element is used for the largest level of heading in HTML."
+  }
+]
