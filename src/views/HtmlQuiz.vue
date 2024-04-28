@@ -37,7 +37,7 @@
   </div>
   <div class="container quiz-container mt-5">
     <div v-if="!submitted && !showInstructions">
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-4 mt-2 total-questions">
           <strong
             >Total Questions:
@@ -46,25 +46,23 @@
         </div>
         <div class="col-4 mt-2 total-questions-mobile">
           <strong
-            >Questions:
+            >Total:
             <span class="text-primary">{{ questions.length }}</span></strong
           >
         </div>
         <div class="col-4 mt-2">
-          <div class="mb-4 text-center quiz-heading  text-success">
+          <div class="mb-4 text-center quiz-heading text-success">
             <strong> HTML Quiz </strong>
           </div>
         </div>
         <div class="col-4 text-end">
           <p class="timer">Time Remaining: {{ minutes }}:{{ seconds }}</p>
-          <p class="timer-mobile">
-             {{ minutes }}:{{ seconds }}
-          </p>
+          <p class="timer-mobile mt-1">{{ minutes }}:{{ seconds }}</p>
         </div>
       </div>
       <div v-if="currentQuestion < questions.length" class="card p-3 mb-3">
         <p class="card-title">
-          Q{{ currentQuestion + 1 }}.
+          Q{{ currentQuestion + 1 }}/{{ questions.length }}.
           <span class="text-primary">{{
             questions[currentQuestion].question
           }}</span>
@@ -261,7 +259,6 @@ export default {
 .quiz-container {
   margin: auto;
   border: 1px solid #dee2e6;
-  padding: 20px;
   border-radius: 5px;
   text-align: left;
 }
@@ -294,7 +291,8 @@ button {
   margin-top: 20px;
 }
 
-.timer, .timer-mobile {
+.timer,
+.timer-mobile {
   color: red;
   font-weight: bold;
   padding: 5px 10px;
@@ -302,38 +300,6 @@ button {
   font-size: 17px;
 }
 
-@media (max-width: 767px) {
-  .timer {
-    display: none;
-  }
-  .timer-mobile {
-    display: block;
-  }
-  .total-questions{
-    display: none;
-  }
-
-  .total-questions-mobile{ 
-    display: block;
-  }
-}
-@media screen and (min-width: 768px) {
-  .timer-mobile {
-    display: none;
-  }
-  .timer{
-    display: block;
-  }
-
-  .total-questions{
-    display: block;
-  }
-
-  .total-questions-mobile{ 
-    display: none;
-  }
-  
-}
 .card-title {
   font-size: 18px;
   font-weight: 700;
@@ -353,12 +319,59 @@ button {
   border-radius: 5px;
 }
 
-.total-questions, .quiz-heading {
+.total-questions,
+.quiz-heading {
   font-size: 17px;
 }
 .form-check-input {
   height: 1.3em;
   width: 1.3em;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .timer {
+    display: none;
+  }
+  .timer-mobile {
+    display: block;
+  }
+  .total-questions {
+    display: none;
+  }
+
+  .total-questions-mobile {
+    display: block;
+  }
+  .form-check-label {
+    margin-left: 10px;
+        margin-top: 5px;
+  }
+  .form-check {
+    background: #f7f7f7;
+    display: block;
+    min-height: 1.5rem;
+    padding: 7px;
+    padding-left: 30px;
+    padding-bottom: 14px;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .timer-mobile {
+    display: none;
+  }
+  .timer {
+    display: block;
+  }
+
+  .total-questions {
+    display: block;
+  }
+
+  .total-questions-mobile {
+    display: none;
+  }
 }
 </style>
