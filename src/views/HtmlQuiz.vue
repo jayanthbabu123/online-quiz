@@ -1,17 +1,19 @@
 <template>
   <div class="container mt-5">
     <div v-if="showInstructions" class="card text-center p-0">
-      <div class="card-header"><strong>Welcome to the HTML and CSS Quiz!</strong></div>
+      <div class="card-header">
+        <strong>Welcome to the HTML and CSS Quiz!</strong>
+      </div>
       <div class="card-body">
         <h5 class="card-title text-primary">Quiz Instructions</h5>
         <p class="card-text">
-          Get ready to test your knowledge with our interactive HTML and CSS quiz.
-          Please read the instructions carefully before you begin.
+          Get ready to test your knowledge with our interactive HTML and CSS
+          quiz. Please read the instructions carefully before you begin.
         </p>
         <ul class="text-start">
           <li>
-            The quiz consists of 10 questions covering
-            various aspects of HTML and CSS.
+            The quiz consists of 10 questions covering various aspects of HTML
+            and CSS.
           </li>
           <li>
             You must select one option for each question to proceed to the next
@@ -42,13 +44,22 @@
             <span class="text-primary">{{ questions.length }}</span></strong
           >
         </div>
+        <div class="col-4 mt-2 total-questions-mobile">
+          <strong
+            >Questions:
+            <span class="text-primary">{{ questions.length }}</span></strong
+          >
+        </div>
         <div class="col-4 mt-2">
-          <div class="mb-4 text-center total-questions text-success">
+          <div class="mb-4 text-center quiz-heading  text-success">
             <strong> HTML Quiz </strong>
           </div>
         </div>
         <div class="col-4 text-end">
           <p class="timer">Time Remaining: {{ minutes }}:{{ seconds }}</p>
+          <p class="timer-mobile">
+             {{ minutes }}:{{ seconds }}
+          </p>
         </div>
       </div>
       <div v-if="currentQuestion < questions.length" class="card p-3 mb-3">
@@ -158,27 +169,26 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-        allQuestions: [],  // All available questions, loaded from JSON
-        questions: [],     // To hold the randomly selected questions
-        userAnswers: [],
-        correctAnswers: 0,
-        incorrectAnswers: 0,
-        submitted: false,
-        timeLeft: 0,       // Timer to be set based on number of questions
-        timer: null,
-        currentQuestion: 0,
-        showInstructions: true  // Initially show instructions
+      allQuestions: [], // All available questions, loaded from JSON
+      questions: [], // To hold the randomly selected questions
+      userAnswers: [],
+      correctAnswers: 0,
+      incorrectAnswers: 0,
+      submitted: false,
+      timeLeft: 0, // Timer to be set based on number of questions
+      timer: null,
+      currentQuestion: 0,
+      showInstructions: true, // Initially show instructions
     };
   },
   created() {
-    import('@/data/html.json').then((module) => {
-        this.allQuestions = module.default;
+    import("@/data/html.json").then((module) => {
+      this.allQuestions = module.default;
     });
-},
+  },
 
   computed: {
     minutes() {
@@ -190,25 +200,25 @@ export default {
   },
   methods: {
     startQuiz() {
-        this.selectRandomQuestions();
-        this.startTimer();
-        this.showInstructions = false;  // Hide instructions and start the quiz
+      this.selectRandomQuestions();
+      this.startTimer();
+      this.showInstructions = false; // Hide instructions and start the quiz
     },
     selectRandomQuestions() {
-        const shuffled = this.allQuestions.sort(() => 0.5 - Math.random());
-        this.questions = shuffled.slice(0, 10); // Select 10 random questions
-        this.userAnswers = Array(this.questions.length).fill(null);
+      const shuffled = this.allQuestions.sort(() => 0.5 - Math.random());
+      this.questions = shuffled.slice(0, 10); // Select 10 random questions
+      this.userAnswers = Array(this.questions.length).fill(null);
     },
     startTimer() {
-        this.timeLeft = this.questions.length * 60; // 60 seconds per question
-        clearInterval(this.timer);
-        this.timer = setInterval(() => {
-            if (this.timeLeft > 0) {
-                this.timeLeft--;
-            } else {
-                this.submitQuiz();
-            }
-        }, 1000);
+      this.timeLeft = this.questions.length * 60; // 60 seconds per question
+      clearInterval(this.timer);
+      this.timer = setInterval(() => {
+        if (this.timeLeft > 0) {
+          this.timeLeft--;
+        } else {
+          this.submitQuiz();
+        }
+      }, 1000);
     },
     nextQuestion() {
       if (this.currentQuestion < this.questions.length - 1) {
@@ -284,7 +294,7 @@ button {
   margin-top: 20px;
 }
 
-.timer {
+.timer, .timer-mobile {
   color: red;
   font-weight: bold;
   padding: 5px 10px;
@@ -294,10 +304,35 @@ button {
 
 @media (max-width: 767px) {
   .timer {
-    top: 5px;
-    right: 5px;
-    font-size: 12px;
+    display: none;
   }
+  .timer-mobile {
+    display: block;
+  }
+  .total-questions{
+    display: none;
+  }
+
+  .total-questions-mobile{ 
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .timer-mobile {
+    display: none;
+  }
+  .timer{
+    display: block;
+  }
+
+  .total-questions{
+    display: block;
+  }
+
+  .total-questions-mobile{ 
+    display: none;
+  }
+  
 }
 .card-title {
   font-size: 18px;
@@ -318,7 +353,7 @@ button {
   border-radius: 5px;
 }
 
-.total-questions {
+.total-questions, .quiz-heading {
   font-size: 17px;
 }
 .form-check-input {
