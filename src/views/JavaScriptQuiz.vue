@@ -81,6 +81,10 @@
             class="text-success" />
           <font-awesome-icon :icon="['fas', 'times']" v-else class="text-danger" />
         </p>
+        <div v-if="question.codeSnippet">
+          <pre v-highlightjs><code class="language-javascript">{{ question.codeSnippet }}</code></pre>
+
+        </div>
         <p>
           <span class="text-primary">Your answer:</span>
           {{ userAnswers[index] }}
